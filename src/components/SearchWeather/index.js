@@ -99,6 +99,9 @@ function SearchWeather() {
               placeholder="Enter name city"
               value={input}
               onChange={(e) => setInput(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.keyCode === 13) handleSearch();
+              }}
             />
             {input ? (
               <div className={cx("remove")} onClick={() => handleRemove()}>
